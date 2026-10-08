@@ -142,7 +142,7 @@ select:focus, input:focus { border-color: var(--acento); box-shadow: 0 0 0 3px r
   box-shadow: var(--sombra);
 }
 
-.grupo summary {
+.grupo > summary {
   min-height: 55px;
   padding: 0 18px;
   display: flex;
@@ -151,13 +151,31 @@ select:focus, input:focus { border-color: var(--acento); box-shadow: 0 0 0 3px r
   cursor: pointer;
   list-style: none;
 }
-.grupo summary::-webkit-details-marker { display: none; }
-.grupo summary::before { content: ""; width: 10px; height: 10px; flex: 0 0 10px; border-radius: 50%; background: var(--financiador-color); }
+.grupo > summary::-webkit-details-marker { display: none; }
+.grupo > summary::before { content: ""; width: 10px; height: 10px; flex: 0 0 10px; border-radius: 50%; background: var(--financiador-color); }
 .grupo h2 { margin: 0; color: var(--financiador-color); font-family: Georgia, serif; font-size: 20px; }
 .grupo .vigencia { color: var(--texto-suave); font-size: 12px; }
 .grupo .items { margin-left: auto; padding: 4px 10px; background: var(--fondo); border-radius: 999px; color: var(--texto-suave); font-size: 12px; }
 .grupo .flecha { color: var(--texto-suave); transition: transform .2s; }
-.grupo[open] .flecha { transform: rotate(180deg); }
+.grupo[open] > summary .flecha { transform: rotate(180deg); }
+
+.categorias { border-top: 1px solid var(--borde); }
+.subgrupo { background: color-mix(in srgb, var(--superficie) 92%, var(--financiador-color) 8%); }
+.subgrupo + .subgrupo { border-top: 1px solid var(--borde); }
+.subgrupo > summary {
+  min-height: 48px;
+  padding: 0 18px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  cursor: pointer;
+  list-style: none;
+}
+.subgrupo > summary::-webkit-details-marker { display: none; }
+.subgrupo > summary strong { color: var(--financiador-color); font-size: 12px; letter-spacing: .08em; text-transform: uppercase; }
+.subgrupo > summary .items { margin-left: auto; }
+.subgrupo > summary .flecha { transform: none; }
+.subgrupo[open] > summary .flecha { transform: rotate(90deg); }
 
 .tabla-contenedor { overflow-x: auto; }
 table { width: 100%; border-collapse: collapse; }
@@ -191,7 +209,8 @@ footer .credito { margin-top: 6px; color: var(--texto); font-weight: 700; }
   .boton-secundario { width: 100%; }
   .resumen { flex-wrap: wrap; }
   .contador { flex: 1; min-width: 140px; }
-  .grupo summary { flex-wrap: wrap; padding: 13px 15px; }
+  .grupo > summary { flex-wrap: wrap; padding: 13px 15px; }
+  .subgrupo > summary { flex-wrap: wrap; padding: 11px 15px; }
   .grupo .items { margin-left: 0; }
   th, td { padding: 10px 13px; }
   .actualizacion span { display: none; }

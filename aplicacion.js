@@ -56,14 +56,41 @@ function renderizar() {
   cantidadFinanciadores.textContent = Object.keys(grupos).length;
   sinResultados.hidden = filas.length !== 0;
 
-  resultadosContenedor.innerHTML = Object.entries(grupos).map(([nombre, items]) => {
-    const meta = FINANCIADORES[nombre];
+  const crearTabla = items => {
     const cuerpo = items.map(item => `
       <tr>
         <td>${escapar(item.droga)}</td>
         <td>${escapar(item.medicamento)}</td>
         <td><span class="auditoria ${claseAuditoria(item.auditoria)}">${escapar(item.auditoria || 'No informado')}</span></td>
       </tr>`).join('');
+
+    return `
+      <div class="tabla-contenedor">
+        <table>
+          <thead><tr><th>Droga</th><th>Nombre comercial / presentación</th><th>Auditoría médica</th></tr></thead>
+          <tbody>${cuerpo}</tbody>
+        </table>
+      </div>`;
+  };
+
+  resultadosContenedor.innerHTML = Object.entries(grupos).map(([nombre, items]) => {
+    const meta = FINANCIADORES[nombre];
+    const contenido = meta.categorias
+      ? `<div class="categorias">${Object.entries(meta.categorias).map(([categoria, datosCategoria]) => {
+          const itemsCategoria = items.filter(item => (item.categoria || 'General') === categoria);
+          if (!itemsCategoria.length) return '';
+          return `
+            <details class="subgrupo">
+              <summary>
+                <strong>${escapar(categoria)}</strong>
+                <span class="vigencia">${escapar(datosCategoria.vigencia)}</span>
+                <span class="items">${itemsCategoria.length} ítems</span>
+                <span class="flecha">▶</span>
+              </summary>
+              ${crearTabla(itemsCategoria)}
+            </details>`;
+        }).join('')}</div>`
+      : crearTabla(items);
 
     return `
       <details class="grupo" style="--financiador-color: ${escapar(meta.color || '#164e70')}" open>
@@ -73,12 +100,7 @@ function renderizar() {
           <span class="items">${items.length} ítems</span>
           <span class="flecha">▼</span>
         </summary>
-        <div class="tabla-contenedor">
-          <table>
-            <thead><tr><th>Droga</th><th>Nombre comercial / presentación</th><th>Auditoría médica</th></tr></thead>
-            <tbody>${cuerpo}</tbody>
-          </table>
-        </div>
+        ${contenido}
       </details>`;
   }).join('');
 }
