@@ -22,7 +22,7 @@ function cargarFinanciadores() {
   nombres.forEach(nombre => {
     const option = document.createElement('option');
     option.value = nombre;
-    option.textContent = nombre;
+    option.textContent = FINANCIADORES[nombre]?.nombre || nombre;
     financiadorSelect.appendChild(option);
   });
 }
@@ -32,7 +32,7 @@ function filtrar() {
   const consulta = normalizar(consultaInput.value);
   return MEDICAMENTOS.filter(item => {
     const coincideFinanciador = !financiador || item.financiador === financiador;
-    const textoBuscable = normalizar(`${item.droga} ${item.medicamento} ${item.auditoria || ''} ${item.financiador}`);
+    const textoBuscable = normalizar(`${item.droga} ${item.medicamento} ${item.auditoria || ''} ${item.financiador} ${item.categoria || ''}`);
     const coincideConsulta = !consulta || textoBuscable.includes(consulta);
     return coincideFinanciador && coincideConsulta;
   });
@@ -75,9 +75,12 @@ function renderizar() {
 
   resultadosContenedor.innerHTML = Object.entries(grupos).map(([nombre, items]) => {
     const meta = FINANCIADORES[nombre];
+    const nombreVisible = meta.nombre || nombre;
     const contenido = meta.categorias
       ? `<div class="categorias">${Object.entries(meta.categorias).map(([categoria, datosCategoria]) => {
-          const itemsCategoria = items.filter(item => (item.categoria || 'General') === categoria);
+          const itemsCategoria = items.filter(item =>
+            (item.categoria || meta.categoriaPredeterminada || 'General') === categoria
+          );
           if (!itemsCategoria.length) return '';
           return `
             <details class="subgrupo">
@@ -95,7 +98,7 @@ function renderizar() {
     return `
       <details class="grupo" style="--financiador-color: ${escapar(meta.color || '#164e70')}" open>
         <summary>
-          <h2>${escapar(nombre)}</h2>
+          <h2>${escapar(nombreVisible)}</h2>
           <span class="vigencia">Vigencia: ${escapar(meta.vigencia)}</span>
           <span class="items">${items.length} ítems</span>
           <span class="flecha">▼</span>
