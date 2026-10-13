@@ -7313,10 +7313,10 @@ MEDICAMENTOS.push(...[
   ["ERITROPOYETINA RECOMB.HUMANA","HYPERCRIT 4000 UI F.A.LIOF.X1+A.DISOL.X2ML","No informado"],
   ["ANIDULAFUNGINA","ANIDUSTATERA 100MG PVO.LIOF.P/INF.END","No informado"],
   ["MEROPENEM","MEROPENEM CELTYC 500 mg F.A","No informado"]
-].map(([droga, medicamento, auditoria]) => ({
+].map(([droga, medicamento]) => ({
   financiador: "OSDE Alto Costo",
   categoria: "Internados",
   droga,
   medicamento,
-  auditoria
+  auditoria: "No informado"
 })));
