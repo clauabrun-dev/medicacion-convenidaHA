@@ -67,7 +67,7 @@ function renderizar() {
     return `
       <div class="tabla-contenedor">
         <table>
-          <thead><tr><th>Droga</th><th>Nombre comercial / presentación</th><th>Auditoría médica</th></tr></thead>
+          <thead><tr><th>Droga</th><th>Nombre comercial / presentación</th><th>Requiere autorización de Auditoría Médica</th></tr></thead>
           <tbody>${cuerpo}</tbody>
         </table>
       </div>`;

@@ -30,7 +30,7 @@ Para OMINT se incorporaron 237 registros de la actualización de noviembre de 20
 
 Para SEMPRE se incorporaron 194 registros únicos de una propuesta sin fecha de vigencia informada en el contenido. Se excluyeron tres duplicados exactos detectados en el PDF original. El documento no identifica auditoría médica por medicamento.
 
-Para Swiss Medical se incorporaron 214 registros de la propuesta de mayo de 2026, sin duplicados exactos. El documento no identifica auditoría médica por medicamento.
+Para Swiss Medical se incorporaron 214 registros del listado vigente desde el 1 de noviembre de 2026, sin duplicados exactos. La columna de autorización previa del archivo fuente se muestra como "Sí" cuando está expresamente indicada y como "No" cuando la celda está vacía.
 
 ## Publicación en GitHub Pages
 
