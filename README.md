@@ -2,9 +2,9 @@
 
 Buscador estático de medicamentos convenidos por financiador.
 
-## Contenido inicial
+## Contenido actual
 
-La versión actual incluye los listados de Poder Judicial, APOS La Rioja, APSOT, ASE-Medifé, OSDE Alto Costo, Caja Notarial, Colegio de Escribanos de la Provincia, FEMÉDICA Alto Costo, IASEP Formosa, INSSSEP Chaco, MEDICUS, OMINT, SEMPRE y Swiss Medical. La base contiene droga y nombre comercial/presentación; no incluye los códigos HA de internación ni de ambulatorio.
+La versión actual incluye los listados de Poder Judicial, APOS La Rioja, APSOT, ASE-Medifé, OSDE Alto Costo, Caja Notarial, Colegio de Escribanos de la Provincia, FEMÉDICA Alto Costo, IASEP Formosa, INSSSEP Chaco, MEDICUS, OMINT, SEMPRE, REDBRIDGE, Swiss Medical y Prevención Salud. La base contiene droga, nombre comercial/presentación y el estado de autorización o auditoría médica; no incluye los códigos HA de internación ni de ambulatorio.
 
 Para APOS La Rioja se incorporaron 194 registros únicos de la propuesta de septiembre de 2026. Se excluyeron ocho duplicados exactos detectados en el PDF original.
 
@@ -31,6 +31,8 @@ Para OMINT se incorporaron 237 registros de la actualización de noviembre de 20
 Para SEMPRE se incorporaron 194 registros únicos de una propuesta sin fecha de vigencia informada en el contenido. Se excluyeron tres duplicados exactos detectados en el PDF original. El documento no identifica auditoría médica por medicamento.
 
 Para Swiss Medical se incorporaron 214 registros del listado vigente desde el 1 de noviembre de 2026, sin duplicados exactos. La columna de autorización previa del archivo fuente se muestra como "Sí" cuando está expresamente indicada y como "No" cuando la celda está vacía.
+
+Para Prevención Salud se incorporaron 206 registros del listado vigente desde el 1 de noviembre de 2026, sin duplicados exactos. Todos los medicamentos están identificados en el archivo fuente como sujetos a autorización previa, por lo que la columna de Auditoría Médica se muestra como "Sí".
 
 ## Publicación en GitHub Pages
 
