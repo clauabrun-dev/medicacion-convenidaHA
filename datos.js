@@ -2923,6 +2923,12 @@ const MEDICAMENTOS = [
   },
   {
     "financiador": "APSOT",
+    "droga": "PEMBROLIZUMAB",
+    "medicamento": "PEMBROX ENVASE 100 MG VIAL X 2",
+    "auditoria": "No"
+  },
+  {
+    "financiador": "APSOT",
     "droga": "PEMETREXED",
     "medicamento": "PEMETREXED 500 GP FARM"
   },

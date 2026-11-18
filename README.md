@@ -8,7 +8,7 @@ La versión actual incluye los listados de Poder Judicial, APOS La Rioja, APSOT,
 
 Para APOS La Rioja se incorporaron 194 registros únicos de la propuesta de septiembre de 2026. Se excluyeron ocho duplicados exactos detectados en el PDF original.
 
-Para APSOT se incorporaron 195 registros del listado de abril de 2025, sin duplicados exactos.
+Para APSOT se incorporaron 196 registros. Al listado de abril de 2025 se agregó PEMBROX 100 mg vial x 2, que no requiere autorización de Auditoría Médica.
 
 Para ASE-Medifé se incorporaron 194 registros del listado de julio de 2025, sin duplicados exactos. La revisión página por página permitió recuperar seis registros ubicados en el primer renglón de las páginas 2 a 7 del PDF.
 
