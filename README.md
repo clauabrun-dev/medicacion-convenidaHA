@@ -30,7 +30,7 @@ Para OMINT se incorporaron 237 registros de la actualización de noviembre de 20
 
 Para SEMPRE se incorporaron 194 registros únicos de una propuesta sin fecha de vigencia informada en el contenido. Se excluyeron tres duplicados exactos detectados en el PDF original. El documento no identifica auditoría médica por medicamento.
 
-Para Swiss Medical se incorporaron 215 registros. Al listado vigente desde el 1 de noviembre de 2026 se agregó CYRAMZA 100 mg (ramucirumab 10 mg/ml, frasco ampolla de 10 ml), que requiere autorización de Auditoría Médica.
+Para Swiss Medical se incorporaron 215 registros. Al listado vigente desde el 1 de noviembre de 2026 se agregó CYRAMZA 100 mg (ramucirumab 10 mg/ml, frasco ampolla de 10 ml). Tanto CYRAMZA 100 mg como CYRAMZA 500 mg requieren autorización de Auditoría Médica.
 
 Para Prevención Salud se incorporaron 206 registros del listado vigente desde el 1 de noviembre de 2026, sin duplicados exactos. Todos los medicamentos están identificados en el archivo fuente como sujetos a autorización previa, por lo que la columna de Auditoría Médica se muestra como "Sí".
 
